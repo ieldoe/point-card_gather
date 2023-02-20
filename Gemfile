@@ -69,3 +69,10 @@ gem "cssbundling-rails", "~> 1.1"
 gem "sassc-rails"
 
 gem 'bootstrap', '~> 5.1.3'
+
+group :development do
+  gem 'rubocop', require: false # 追加
+  gem 'rubocop-performance', require: false # 追加
+  gem 'rubocop-rails', require: false # 追加
+  gem 'rubocop-rspec' # 追加
+end
