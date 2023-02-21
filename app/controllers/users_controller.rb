@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  #before_action :require_login #ログイン機能作成後後追加
   def show
   end
 
@@ -7,6 +8,12 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = User.new(user_params)
+    if @user.save
+      auto_login(@user)
+      redirect_to root_path
+    else
+      render :new
   end
 
   def edit
@@ -17,5 +24,11 @@ class UsersController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:email, :password, :password_confirmation)
   end
 end
