@@ -1,10 +1,14 @@
 class UsersController < ApplicationController
-  #before_action :require_login #ログイン機能作成後後追加
+  # before_action :require_login #ログイン機能作成後後追加
   def show
   end
 
   def new
     @user = User.new
+  end
+
+  def edit
+    @user = User.find(params[:id])
   end
 
   def create
@@ -14,10 +18,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       render :new
-  end
-
-  def edit
-    @user = User.find(params[:id])
+    end
   end
 
   def update
