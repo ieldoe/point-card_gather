@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  # before_action :require_login #ログイン機能作成後後追加
+  before_action :require_login , only: %i[edit]
   def show
+    @user = User.find(current_user.id)
   end
 
   def new
@@ -8,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = User.find(current_user.id)
   end
 
   def create

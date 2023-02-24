@@ -14,7 +14,6 @@ class UserSessionsController < ApplicationController
 
   def destroy
     logout
-    binding.break
     redirect_to login_path, status: :see_other
   end
 end
