@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_login , only: %i[edit]
+  before_action :require_login, only: %i[edit]
   def show
     @user = User.find(current_user.id)
   end
