@@ -82,3 +82,5 @@ gem 'sorcery'
 group :development do
   gem 'letter_opener_web', '~> 2.0'
 end
+
+gem 'config'
