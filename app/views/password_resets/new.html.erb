@@ -1,0 +1,7 @@
+ <%= form_with url: password_resets_path, local: true do |f| %>
+    <div class="form-group">
+      <%= f.label :email, value: params[:email] %>
+      <%= f.email_field :email, class: "form-control", id: 'email' %>
+    </div>
+    <%= f.submit "パスワードリセット", class: "btn btn-primary" %>
+  <% end %>

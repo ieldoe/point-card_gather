@@ -1,0 +1,9 @@
+
+<%= form_with(model: @user, local: true) do |f| %>
+        <div class="form-group">
+          <%= f.label :email%>
+          <%= f.text_field :email, class: 'form-control', id: 'user_email'%>
+        </div>
+
+          <%= f.submit '変更', class: 'btn btn-primary'%>
+<%end%>

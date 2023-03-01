@@ -76,3 +76,11 @@ group :development do
   gem 'rubocop-rails', require: false # 追加
   gem 'rubocop-rspec' # 追加
 end
+
+gem 'sorcery'
+
+group :development do
+  gem 'letter_opener_web', '~> 2.0'
+end
+
+gem 'config'
