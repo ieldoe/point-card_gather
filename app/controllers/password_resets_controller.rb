@@ -12,7 +12,7 @@ class PasswordResetsController < ApplicationController
   def edit
     @token = params[:id]
     @user = User.load_from_reset_password_token(params[:id])
-        return not_authenticated if @user.blank?
+    return not_authenticated if @user.blank?
   end
 
   # パスワードのリセットを要求するアクション。
@@ -26,7 +26,6 @@ class PasswordResetsController < ApplicationController
 
     # 電子メールが見つかったかどうかに関係なく、ユーザーの指示が送信されたことをユーザーに伝えます。
     # これは、システムに存在する電子メールに関する情報を攻撃者に漏らさないためです。
-    binding.break
     redirect_to login_path
   end
 

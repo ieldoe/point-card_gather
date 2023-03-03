@@ -4,13 +4,11 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.reset_password_email.subject
   def reset_password_email(user)
-   @user = User.find(user.id)
+    @user = User.find(user.id)
 
-   #このurlでリダイレクトするとパスワードがリセットされる。
-   @url = edit_password_reset_url(@user.reset_password_token)
-   #toは宛先、subjectは件名を指定する。
-   binding.break
-   mail(:to => user.email,
-       :subject => "パスワードリセット")
+    # このurlでリダイレクトするとパスワードがリセットされる。
+    @url = edit_password_reset_url(@user.reset_password_token)
+    # toは宛先、subjectは件名を指定する。
+    mail(to: user.email, subject: default_i18n_subject)
   end
 end
