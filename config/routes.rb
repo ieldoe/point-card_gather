@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   root to: 'homes#top'
   resources :users, only: %i[show new create edit update destroy]
-  resources :pointcards, only: %i[new ]
+  resources :pointcards, only: %i[new index create]
   resources :password_resets, only: %i[new create edit update]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
