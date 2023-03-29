@@ -6,7 +6,7 @@ class UserSessionsController < ApplicationController
     @user = login(params[:email], params[:password])
 
     if @user
-      redirect_back_or_to(new_pointcard_path)
+      redirect_back_or_to(pointcards_path)
     else
       render :new
     end

@@ -88,3 +88,7 @@ gem 'config'
 gem 'rails-i18n', '~> 7.0.0' # For 7.0.0
 
 gem 'mechanize'
+
+gem 'mini_magick'
+
+gem 'image_processing', '~> 1.0'
